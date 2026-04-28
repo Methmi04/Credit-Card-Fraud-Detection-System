@@ -1,27 +1,93 @@
-Overview:
-This project introduces a hybrid fraud detection system designed for Sri Lanka’s financial sector. It combines SMS‑based user authentication with machine learning models (Isolation Forest, Logistic Regression, Random Forest, SVM) to detect fraudulent transactions in real time.
 
-Datasets Global Dataset (Kaggle): 2,512 transactions, 16 attributes (transaction details, account info, demographics, device usage).
+## Credit Card Fraud Detection System 
 
-Local Dataset (Sri Lanka Merchant): 860 transactions, with categorical identifiers (TransactionDate, ApprovalNumber, CardNumber) and numeric attributes (GrossAmount, DiscountAmount, NetAmount).
+### Overview
 
-Methodology:
-Data Preprocessing: Cleaning duplicates, handling missing values, encoding categorical variables, and standardizing formats.
+This project presents a **hybrid credit card fraud detection system** that combines **Machine Learning (ML)** models with **SMS-based user verification** to improve fraud detection in the Sri Lankan financial environment.
 
-Model Selection:
+With the rapid growth of digital payments and e-commerce in Sri Lanka, traditional rule-based fraud detection systems are no longer sufficient. This project addresses that gap by introducing a **data-driven and user-interactive approach**.
 
-Unsupervised: Isolation Forest
+---
 
-Supervised: Logistic Regression, Random Forest, SVM
+### Key Objectives
 
-Evaluation Metrics: Accuracy, precision, recall, F1‑score.
+* Detect fraudulent credit card transactions using ML models
+* Compare performance between **global** and **Sri Lankan datasets**
+* Handle **class imbalance issues** in fraud detection
+* Enhance security with **SMS-based transaction verification**
+* Provide a **realistic fraud prevention workflow**
 
-Hybrid Workflow: SMS verification (“YES” or “NO”) combined with ML predictions for anomaly detection.
+---
 
-Results:
+### Datasets Used
 
-Global Dataset: Accuracy 0.88, but poor fraud recall (0.06).
+* **Dataset 1 (Global Dataset)**
 
-Local Dataset: Balanced outcomes, Random Forest (0.88 accuracy) and SVM (0.87 accuracy) with strong recall.
+  * 2,512 transactions with 16 features
+  * Highly imbalanced (very few fraud cases)
 
-Hybrid Approach: SMS verification instantly rejects unauthorized transactions, reducing reliance on ML predictions alone.
+* **Dataset 2 (Sri Lanka Local Dataset)**
+
+  * 860 transactions
+  * More balanced and context-relevant
+  * Includes financial attributes like GrossAmount, DiscountAmount, NetAmount
+
+---
+
+### ⚙️ Technologies & Tools
+
+* Python
+* Scikit-learn
+* Pandas, NumPy
+* Isolation Forest (Anomaly Detection)
+* Logistic Regression
+* Random Forest
+* Support Vector Machine (SVM)
+
+---
+
+### Models Implemented
+
+* **Isolation Forest** (Unsupervised anomaly detection)
+* **Logistic Regression**
+* **Random Forest** 
+* **Support Vector Machine (SVM)**
+
+---
+
+### System Workflow
+
+1. Transaction occurs
+2. User receives SMS verification
+
+   * Reply **"NO" → Transaction rejected immediately**
+   * Reply **"YES" → Sent to ML model**
+3. ML model classifies transaction as:
+
+   * Approved
+   * Declined
+
+---
+
+### Key Results
+
+#### Dataset 1 (Global)
+
+* Accuracy: **0.88**
+
+
+#### Dataset 2 (Sri Lanka)
+
+* Random Forest Accuracy: **0.88**
+
+
+---
+
+### 💡 Key Insights
+
+
+* Random Forest performs best in balanced datasets
+* SMS verification acts as a **safety layer**, reducing missed fraud cases
+
+
+
